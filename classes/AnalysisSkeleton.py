@@ -17,8 +17,15 @@ class analysisSkeleton:
         self.data['validityPeriods']=s.iloc[:].apply(lambda x: x[0]['validityPeriods'])
         self.data['created2']=s.iloc[:].apply(lambda x: x[0]['created'])
         self.data['line']=s.iloc[:].apply(lambda x: x[0]['id'])
-        del data['name']
-        del data['id']
+        del self.data['name']
+        del self.data['id']
         #del data['lineStatuses']
         #del data['routeSections']
-        return data
+
+        # todo
+        # refactor so function can be run repeatedly
+        # created2==??\
+        # plot delays *
+        # why is it always good service
+
+        return self.data

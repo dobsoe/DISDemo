@@ -31,7 +31,7 @@ class s3Connection:
         for key in bucket_dis.list():
             i=i+1
             if(i%100==0):
-                print (i+'files read')
+                print (str(i)+'files read')
             if((maxfiles>0) and (i>maxfiles)):
                 break
             key=bucket_dis.get_key(key.name.encode('utf-8'))

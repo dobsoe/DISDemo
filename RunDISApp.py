@@ -11,7 +11,7 @@ port = int(os.getenv("PORT", 9099))
 @app.route('/')
 def main():
     conn = S3Connection.s3Connection()
-    jsondata=conn.getjson()
+    jsondata=conn.getjson(500)
     ellie = AnalysisSkeleton.analysisSkeleton(jsondata)
     d=ellie.getAttribute()
     return d
